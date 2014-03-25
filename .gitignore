@@ -1,3 +1,7 @@
+# Codekit config #
+##################
+config.codekit
+
 # Compiled source #
 ###################
 *.com
