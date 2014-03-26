@@ -1,1 +1,52 @@
 // Imports
+@import '../govuk_frontend_toolkit/stylesheets/_colours';
+@import '../govuk_frontend_toolkit/stylesheets/_typography';
+
+// let's namespace
+.presentation-view {
+
+  font-family: $NTA-Light;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: (40 / 36);
+  text-transform: none;
+  color: $white;
+
+  background-color: $govuk-blue;
+
+  a {
+    color: $white;
+    text-decoration: none;
+
+    // crazy underlines!
+    background-image: -moz-linear-gradient(top,#fff 75%,#333332 75%);
+    background-image: -webkit-linear-gradient(top,#fff 75%,#333332 75%);
+    background-image: -o-linear-gradient(top,#fff 75%,#333332 75%);
+    background-image: linear-gradient(to bottom, $govuk-blue 75%, $white 75%);
+    background-repeat: repeat-x;
+
+    background-size: 2px 2px;
+    background-position: 0 37px;
+  }
+
+  .container {
+    display: block; // opera
+  }
+
+  .unit-header--heading {
+    font-size: 60px;
+  }
+
+  .unit-data {
+    margin: 0;
+  }
+  .unit-data--focal {
+    font-size: 400px;
+  }
+  .unit-data--caption {
+    font-size: 100px;
+
+    max-width: 10em;
+  }
+
+}

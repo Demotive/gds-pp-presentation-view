@@ -1,0 +1,36 @@
+@font-face {
+  font-family: GDS-Logo;
+  src: local("HelveticaNeue"), local("Helvetica Neue"), local("Arial"), local("Helvetica"); }
+@-ms-viewport {
+  width: device-width; }
+@-o-viewport {
+  width: device-width; }
+.presentation-view {
+  font-family: "nta", Arial, sans-serif;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.11111;
+  text-transform: none;
+  color: white;
+  background-color: #005ea5; }
+  .presentation-view a {
+    color: white;
+    text-decoration: none;
+    background-image: -moz-linear-gradient(top, white 75%, #333332 75%);
+    background-image: -webkit-linear-gradient(top, white 75%, #333332 75%);
+    background-image: -o-linear-gradient(top, white 75%, #333332 75%);
+    background-image: linear-gradient(to bottom, #005ea5 75%, white 75%);
+    background-repeat: repeat-x;
+    background-size: 2px 2px;
+    background-position: 0 37px; }
+  .presentation-view .container {
+    display: block; }
+  .presentation-view .unit-header--heading {
+    font-size: 60px; }
+  .presentation-view .unit-data {
+    margin: 0; }
+  .presentation-view .unit-data--focal {
+    font-size: 400px; }
+  .presentation-view .unit-data--caption {
+    font-size: 100px;
+    max-width: 10em; }
