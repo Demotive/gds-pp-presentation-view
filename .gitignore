@@ -2,6 +2,10 @@
 ##################
 config.codekit
 
+# Sass cache #
+##############
+.sass-cache
+
 # Compiled source #
 ###################
 *.com
