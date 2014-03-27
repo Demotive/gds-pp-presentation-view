@@ -82,6 +82,11 @@ $lh-gutter-1080p: 590px;
     -o-transform: translate3d(0,0,0);
     transform: translate3d(0,0,0);
 
+    -webkit-animation: translate3d 1s ease-in-out;
+    -moz-animation: translate3d 1s ease-in-out;
+    -o-animation: translate3d 1s ease-in-out;
+    animation: translate3d 1s ease-in-out;
+
     /*-webkit-transform: translate3d(-$unit-width-1080p,0,0);
     -moz-transform: translate3d(-$unit-width-1080p,0,0);
     -ms-transform: translate3d(-$unit-width-1080p,0,0);
