@@ -1,9 +1,23 @@
 // Imports
 @import '../govuk_frontend_toolkit/stylesheets/_colours';
+@import '../govuk_frontend_toolkit/stylesheets/_css3';
 @import '../govuk_frontend_toolkit/stylesheets/_typography';
+
+// vars
+$unit-width-1080p: 1920px;
+$lh-gutter-1080p: 590px;
 
 // let's namespace
 .presentation-view {
+
+  // hide body overflow
+
+  overflow: hidden;
+
+  // General
+
+  margin: 0;
+  padding: 0;
 
   font-family: $NTA-Light;
   font-weight: 700;
@@ -33,41 +47,151 @@
     display: block; // opera
   }
 
+  // ---------------------------------------------------------------------------
+
+  // constant header area
+  .unit-header {
+    padding: 64px 0 120px 0;
+    margin-left: $lh-gutter-1080p;
+  }
+
   .unit-header--heading {
+    margin: 0;
     font-size: 60px;
   }
 
+  // ---------------------------------------------------------------------------
+
+  // constant footer area
+
+  .performance-strap {
+    margin-top: 155px;
+    margin-left: $lh-gutter-1080p;
+  }
+
+  // ---------------------------------------------------------------------------
+
+  // slide container
+
+  #units {
+    width: $unit-width-1080p;
+
+    -webkit-transform: translate3d(0,0,0);
+    -moz-transform: translate3d(0,0,0);
+    -ms-transform: translate3d(0,0,0);
+    -o-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0);
+
+    /*-webkit-transform: translate3d(-$unit-width-1080p,0,0);
+    -moz-transform: translate3d(-$unit-width-1080p,0,0);
+    -ms-transform: translate3d(-$unit-width-1080p,0,0);
+    -o-transform: translate3d(-$unit-width-1080p,0,0);
+    transform: translate3d(-$unit-width-1080p,0,0);*/
+  }
+
+  // ---------------------------------------------------------------------------
+
+  // unit items
+
   .unit-data {
+    @include box-sizing(border-box);
+
+    display: table-cell;
     margin: 0;
+
+    min-width: $unit-width-1080p;
+    padding-left: $lh-gutter-1080p;
   }
-  .unit-data--focal {
-    font-size: 400px;
-    line-height: 1;
-    letter-spacing: -0.025em;
-  }
-  .unit-data--caption {
-    font-size: 100px;
-  }
+
+    .unit-data--focal {
+      font-size: 400px;
+      line-height: 1;
+      letter-spacing: -0.025em;
+    }
+
+    .unit-data--caption {
+      margin-top: -40px;
+      font-size: 100px;
+    }
+
+  // ---------------------------------------------------------------------------
+
+  // Flags
 
   .flag {
     position: relative;
     left: -30px;
     display: inline-block;
-    padding: 15px 30px 10px;
-    background-color: $secondary-text-colour;
-  }
-  .unit-data--focal.flag {
-    padding-bottom: 0;
+    padding: 0 30px;
+    background-color: transparent;
   }
 
-  .increase {
+  // tinted increase levels
+  .increase-level-3 {
     background-color: rgb(0,205,65);
   }
-  .decrease {
+  .increase-level-4 {
+    background-color: rgb(0,205,65);
+  }
+
+  // tinted decrease levels
+  .decrease-level-3 {
     background-color: rgb(220,50,50);
   }
+  .decrease-level-4 {
+    background-color: rgb(220,50,50);
+  }
+
   .loud {
     text-transform: uppercase;
+  }
+
+  // ---------------------------------------------------------------------------
+
+  // Imagery
+
+  [class*='icon-'] {
+    background-repeat: no-repeat;
+  }
+  .icon-completion {
+    background-image: url(../images/icon-completion.svg);
+    background-size: 194px 410px;
+    background-position: 211px 0;
+  }
+  .icon-loadtime {
+    background-image: url(../images/icon-loadtime.svg);
+    background-size: 290px 330px;
+    background-position: 155px 0;
+  }
+  .icon-renewals {
+    background-image: url(../images/icon-renewals.svg);
+    background-size: 315px 316px;
+    background-position: 139px 15px;
+  }
+  .icon-satisfaction {
+    background-image: url(../images/icon-satisfaction.svg);
+    background-size: 421px 200px;
+    background-position: 87px 70px;
+  }
+  .icon-service {
+    background-image: url(../images/icon-service.svg);
+    background-size: 255px 245px;
+    background-position: 172px 50px;
+  }
+  .icon-touch-horizontal {
+    background-image: url(../images/icon-touch-horizontal.svg);
+    background-size: 330px 280px;
+    background-position: 128px 70px;
+  }
+  .icon-touch-vertical {
+    background-image: url(../images/icon-touch-vertical.svg);
+    background-size: 255px 416px;
+    background-position: 180px 0;
+  }
+  .icon-users {
+    background-image: url(../images/icon-users.svg);
+    background-size: 304px 286px;
+    background-position: 145px 30px;
   }
 
 }

@@ -6,6 +6,9 @@
 @-o-viewport {
   width: device-width; }
 .presentation-view {
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
   font-family: "nta", Arial, sans-serif;
   font-weight: 700;
   font-size: 36px;
@@ -25,27 +28,89 @@
     background-position: 0 37px; }
   .presentation-view .container {
     display: block; }
+  .presentation-view .unit-header {
+    padding: 64px 0 120px 0;
+    margin-left: 590px; }
   .presentation-view .unit-header--heading {
+    margin: 0;
     font-size: 60px; }
+  .presentation-view .performance-strap {
+    margin-top: 155px;
+    margin-left: 590px; }
+  .presentation-view #units {
+    width: 1920px;
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    -o-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    /*-webkit-transform: translate3d(-$unit-width-1080p,0,0);
+    -moz-transform: translate3d(-$unit-width-1080p,0,0);
+    -ms-transform: translate3d(-$unit-width-1080p,0,0);
+    -o-transform: translate3d(-$unit-width-1080p,0,0);
+    transform: translate3d(-$unit-width-1080p,0,0);*/ }
   .presentation-view .unit-data {
-    margin: 0; }
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    display: table-cell;
+    margin: 0;
+    min-width: 1920px;
+    padding-left: 590px; }
   .presentation-view .unit-data--focal {
     font-size: 400px;
     line-height: 1;
     letter-spacing: -0.025em; }
   .presentation-view .unit-data--caption {
+    margin-top: -40px;
     font-size: 100px; }
   .presentation-view .flag {
     position: relative;
     left: -30px;
     display: inline-block;
-    padding: 15px 30px 10px;
-    background-color: #6f777b; }
-  .presentation-view .unit-data--focal.flag {
-    padding-bottom: 0; }
-  .presentation-view .increase {
+    padding: 0 30px;
+    background-color: transparent; }
+  .presentation-view .increase-level-3 {
     background-color: #00cd41; }
-  .presentation-view .decrease {
+  .presentation-view .increase-level-4 {
+    background-color: #00cd41; }
+  .presentation-view .decrease-level-3 {
+    background-color: #dc3232; }
+  .presentation-view .decrease-level-4 {
     background-color: #dc3232; }
   .presentation-view .loud {
     text-transform: uppercase; }
+  .presentation-view [class*='icon-'] {
+    background-repeat: no-repeat; }
+  .presentation-view .icon-completion {
+    background-image: url(../images/icon-completion.svg);
+    background-size: 194px 410px;
+    background-position: 211px 0; }
+  .presentation-view .icon-loadtime {
+    background-image: url(../images/icon-loadtime.svg);
+    background-size: 290px 330px;
+    background-position: 155px 0; }
+  .presentation-view .icon-renewals {
+    background-image: url(../images/icon-renewals.svg);
+    background-size: 315px 316px;
+    background-position: 139px 15px; }
+  .presentation-view .icon-satisfaction {
+    background-image: url(../images/icon-satisfaction.svg);
+    background-size: 421px 200px;
+    background-position: 87px 70px; }
+  .presentation-view .icon-service {
+    background-image: url(../images/icon-service.svg);
+    background-size: 255px 245px;
+    background-position: 172px 50px; }
+  .presentation-view .icon-touch-horizontal {
+    background-image: url(../images/icon-touch-horizontal.svg);
+    background-size: 330px 280px;
+    background-position: 128px 70px; }
+  .presentation-view .icon-touch-vertical {
+    background-image: url(../images/icon-touch-vertical.svg);
+    background-size: 255px 416px;
+    background-position: 180px 0; }
+  .presentation-view .icon-users {
+    background-image: url(../images/icon-users.svg);
+    background-size: 304px 286px;
+    background-position: 145px 30px; }
