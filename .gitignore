@@ -1,6 +1,11 @@
-# Codekit config #
-##################
+# Codekit #
+###########
 config.codekit
+.codekit-cache
+
+# Beanstalk #
+#############
+beanstalk-ignore.txt
 
 # Sass cache #
 ##############
