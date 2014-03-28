@@ -6,16 +6,17 @@
 @-o-viewport {
   width: device-width; }
 .presentation-view {
-  overflow: hidden;
   margin: 0;
   padding: 0;
   font-family: "nta", Arial, sans-serif;
   font-weight: 700;
-  font-size: 36px;
-  line-height: 1.11111;
+  font-size: 2.25rem;
+  line-height: 1.11111111111111;
   text-transform: none;
   color: white;
   background-color: #005ea5; }
+  .presentation-view.js-enabled {
+    overflow: hidden; }
   .presentation-view a {
     color: white;
     text-decoration: none;
@@ -33,12 +34,12 @@
     margin-left: 590px; }
   .presentation-view .unit-header--heading {
     margin: 0;
-    font-size: 60px; }
+    font-size: 3.75rem; }
   .presentation-view .performance-strap {
     margin-top: 155px;
     margin-left: 590px; }
   .presentation-view #units {
-    width: 1920px;
+    width: 100%;
     margin-left: 0;
     -webkit-transform: translate3d(0, 0, 0);
     -moz-transform: translate3d(0, 0, 0);
@@ -55,11 +56,11 @@
     min-width: 1920px;
     padding-left: 590px; }
   .presentation-view .unit-data--focal {
-    font-size: 400px;
+    font-size: 25rem;
     line-height: 1;
-    letter-spacing: -0.025em; }
+    letter-spacing: -0.025rem; }
   .presentation-view .unit-data--caption {
-    font-size: 100px; }
+    font-size: 6.25rem; }
   .presentation-view .unit-data--focal + .unit-data--caption {
     margin-top: -40px; }
   .presentation-view .flag {
