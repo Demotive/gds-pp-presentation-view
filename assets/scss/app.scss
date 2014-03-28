@@ -185,7 +185,7 @@ $lh-gutter-1080p: 590px;
   .icon-service {
     background-image: url(../images/icon-service.svg);
     background-size: 255px 245px;
-    background-position: 172px 50px;
+    background-position: 172px 160px;
   }
   .icon-touch-horizontal {
     background-image: url(../images/icon-touch-horizontal.svg);
@@ -196,6 +196,11 @@ $lh-gutter-1080p: 590px;
     background-image: url(../images/icon-touch-vertical.svg);
     background-size: 255px 416px;
     background-position: 180px 0;
+  }
+  .icon-uptime {
+    background-image: url(../images/icon-uptime.svg);
+    background-size: 360px 292px;
+    background-position: 120px 50px;
   }
   .icon-users {
     background-image: url(../images/icon-users.svg);

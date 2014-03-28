@@ -103,7 +103,7 @@
   .presentation-view .icon-service {
     background-image: url(../images/icon-service.svg);
     background-size: 255px 245px;
-    background-position: 172px 50px; }
+    background-position: 172px 160px; }
   .presentation-view .icon-touch-horizontal {
     background-image: url(../images/icon-touch-horizontal.svg);
     background-size: 330px 280px;
@@ -112,6 +112,10 @@
     background-image: url(../images/icon-touch-vertical.svg);
     background-size: 255px 416px;
     background-position: 180px 0; }
+  .presentation-view .icon-uptime {
+    background-image: url(../images/icon-uptime.svg);
+    background-size: 360px 292px;
+    background-position: 120px 50px; }
   .presentation-view .icon-users {
     background-image: url(../images/icon-users.svg);
     background-size: 304px 286px;
