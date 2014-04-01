@@ -5,18 +5,31 @@
   width: device-width; }
 @-o-viewport {
   width: device-width; }
+html {
+  height: 100%; }
+
 .presentation-view {
+  position: relative;
+  height: 100%;
   margin: 0;
   padding: 0;
   font-family: "nta", Arial, sans-serif;
   font-weight: 700;
-  font-size: 2.25rem;
   line-height: 1.11111111111111;
   text-transform: none;
   color: white;
   background-color: #005ea5; }
   .presentation-view.js-enabled {
     overflow: hidden; }
+  @media screen and (min-width: 1024px) {
+    .presentation-view {
+      font-size: 114%; } }
+  @media screen and (min-width: 1280px) {
+    .presentation-view {
+      font-size: 160%; } }
+  @media screen and (min-width: 1920px) {
+    .presentation-view {
+      font-size: 225%; } }
   .presentation-view a {
     color: white;
     text-decoration: none;
@@ -28,23 +41,45 @@
     background-size: 2px 2px;
     background-position: 0 37px; }
   .presentation-view .container {
-    display: block; }
+    display: block;
+    height: 100%; }
   .presentation-view .unit-header {
-    padding: 64px 0 120px 0;
-    margin-left: 590px; }
+    position: absolute;
+    top: 5.925925925926%; }
+    @media screen and (min-width: 1024px) {
+      .presentation-view .unit-header {
+        left: 315px; } }
+    @media screen and (min-width: 1280px) {
+      .presentation-view .unit-header {
+        left: 393px; } }
+    @media screen and (min-width: 1920px) {
+      .presentation-view .unit-header {
+        left: 590px; } }
   .presentation-view .unit-header--heading {
     margin: 0;
-    font-size: 3.75rem; }
+    font-size: 1.66666666666667em; }
   .presentation-view .performance-strap {
-    margin-top: 155px;
-    margin-left: 590px; }
+    position: absolute;
+    bottom: 4.62962962963%;
+    margin: 0; }
+    @media screen and (min-width: 1024px) {
+      .presentation-view .performance-strap {
+        left: 315px; } }
+    @media screen and (min-width: 1280px) {
+      .presentation-view .performance-strap {
+        left: 393px; } }
+    @media screen and (min-width: 1920px) {
+      .presentation-view .performance-strap {
+        left: 590px; } }
   .presentation-view #units {
+    position: relative;
+    top: 50%;
     width: 100%;
     margin-left: 0;
-    -webkit-transform: translate3d(0, 0, 0);
-    -moz-transform: translate3d(0, 0, 0);
-    -o-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
+    -webkit-transform: translate3d(0, -50%, 0);
+    -moz-transform: translate3d(0, -50%, 0);
+    -o-transform: translate3d(0, -50%, 0);
+    transform: translate3d(0, -50%, 0);
     transition: margin-left 1s ease-in-out; }
   .presentation-view .unit-data {
     -webkit-box-sizing: border-box;
@@ -52,17 +87,29 @@
     box-sizing: border-box;
     display: table-cell;
     vertical-align: top;
-    margin: 0;
-    min-width: 1920px;
-    padding-left: 590px; }
+    margin: 0; }
+    @media screen and (min-width: 1024px) {
+      .presentation-view .unit-data {
+        min-width: 1024px;
+        padding-left: 315px; } }
+    @media screen and (min-width: 1280px) {
+      .presentation-view .unit-data {
+        min-width: 1280px;
+        padding-left: 393px; } }
+    @media screen and (min-width: 1920px) {
+      .presentation-view .unit-data {
+        min-width: 1920px;
+        padding-left: 590px; } }
   .presentation-view .unit-data--focal {
-    font-size: 25rem;
+    font-size: 11.11111111111111em;
     line-height: 1;
-    letter-spacing: -0.025rem; }
+    letter-spacing: -0.025em; }
   .presentation-view .unit-data--caption {
-    font-size: 6.25rem; }
+    font-size: 2.77777777777778em; }
   .presentation-view .unit-data--focal + .unit-data--caption {
     margin-top: -40px; }
+  .presentation-view .unit-data--caption:first-child {
+    margin-top: 18px; }
   .presentation-view .flag {
     position: relative;
     left: -30px;
@@ -86,38 +133,128 @@
   .presentation-view [class*='icon-'] {
     background-repeat: no-repeat; }
   .presentation-view .icon-completion {
-    background-image: url(../images/icon-completion.svg);
-    background-size: 194px 410px;
-    background-position: 211px 0; }
+    background-image: url(../images/icon-completion.svg); }
+    @media screen and (min-width: 1024px) {
+      .presentation-view .icon-completion {
+        background-size: 97px 205px;
+        background-position: 150px 0; } }
+    @media screen and (min-width: 1280px) {
+      .presentation-view .icon-completion {
+        background-size: 138px 291px;
+        background-position: 150px 0; } }
+    @media screen and (min-width: 1920px) {
+      .presentation-view .icon-completion {
+        background-size: 194px 410px;
+        background-position: 211px 0; } }
   .presentation-view .icon-loadtime {
-    background-image: url(../images/icon-loadtime.svg);
-    background-size: 290px 330px;
-    background-position: 155px 0; }
+    background-image: url(../images/icon-loadtime.svg); }
+    @media screen and (min-width: 1024px) {
+      .presentation-view .icon-loadtime {
+        background-size: 145px 165px;
+        background-position: 78px 0; } }
+    @media screen and (min-width: 1280px) {
+      .presentation-view .icon-loadtime {
+        background-size: 206px 234px;
+        background-position: 110px 0; } }
+    @media screen and (min-width: 1920px) {
+      .presentation-view .icon-loadtime {
+        background-size: 290px 330px;
+        background-position: 155px 0; } }
   .presentation-view .icon-renewals {
-    background-image: url(../images/icon-renewals.svg);
-    background-size: 315px 316px;
-    background-position: 139px 15px; }
+    background-image: url(../images/icon-renewals.svg); }
+    @media screen and (min-width: 1024px) {
+      .presentation-view .icon-renewals {
+        background-size: 158px 158px;
+        background-position: 70px 8px; } }
+    @media screen and (min-width: 1280px) {
+      .presentation-view .icon-renewals {
+        background-size: 224px 224px;
+        background-position: 99px 11px; } }
+    @media screen and (min-width: 1920px) {
+      .presentation-view .icon-renewals {
+        background-size: 315px 316px;
+        background-position: 139px 15px; } }
   .presentation-view .icon-satisfaction {
-    background-image: url(../images/icon-satisfaction.svg);
-    background-size: 421px 200px;
-    background-position: 87px 70px; }
+    background-image: url(../images/icon-satisfaction.svg); }
+    @media screen and (min-width: 1024px) {
+      .presentation-view .icon-satisfaction {
+        background-size: 211px 100px;
+        background-position: 44px 35px; } }
+    @media screen and (min-width: 1280px) {
+      .presentation-view .icon-satisfaction {
+        background-size: 299px 142px;
+        background-position: 62px 50px; } }
+    @media screen and (min-width: 1920px) {
+      .presentation-view .icon-satisfaction {
+        background-size: 421px 200px;
+        background-position: 87px 70px; } }
   .presentation-view .icon-service {
-    background-image: url(../images/icon-service.svg);
-    background-size: 255px 245px;
-    background-position: 172px 160px; }
+    background-image: url(../images/icon-service.svg); }
+    @media screen and (min-width: 1024px) {
+      .presentation-view .icon-service {
+        background-size: 128px 143px;
+        background-position: 86px 80px; } }
+    @media screen and (min-width: 1280px) {
+      .presentation-view .icon-service {
+        background-size: 181px 202px;
+        background-position: 122px 114px; } }
+    @media screen and (min-width: 1920px) {
+      .presentation-view .icon-service {
+        background-size: 255px 285px;
+        background-position: 172px 160px; } }
   .presentation-view .icon-touch-horizontal {
-    background-image: url(../images/icon-touch-horizontal.svg);
-    background-size: 330px 280px;
-    background-position: 128px 70px; }
+    background-image: url(../images/icon-touch-horizontal.svg); }
+    @media screen and (min-width: 1024px) {
+      .presentation-view .icon-touch-horizontal {
+        background-size: 165px 140px;
+        background-position: 64px 35px; } }
+    @media screen and (min-width: 1280px) {
+      .presentation-view .icon-touch-horizontal {
+        background-size: 234px 199px;
+        background-position: 91px 50px; } }
+    @media screen and (min-width: 1920px) {
+      .presentation-view .icon-touch-horizontal {
+        background-size: 330px 280px;
+        background-position: 128px 70px; } }
   .presentation-view .icon-touch-vertical {
-    background-image: url(../images/icon-touch-vertical.svg);
-    background-size: 255px 416px;
-    background-position: 180px 0; }
+    background-image: url(../images/icon-touch-vertical.svg); }
+    @media screen and (min-width: 1024px) {
+      .presentation-view .icon-touch-vertical {
+        background-size: 128px 208px;
+        background-position: 90px 0; } }
+    @media screen and (min-width: 1280px) {
+      .presentation-view .icon-touch-vertical {
+        background-size: 181px 295px;
+        background-position: 128px 0; } }
+    @media screen and (min-width: 1920px) {
+      .presentation-view .icon-touch-vertical {
+        background-size: 255px 416px;
+        background-position: 180px 0; } }
   .presentation-view .icon-uptime {
-    background-image: url(../images/icon-uptime.svg);
-    background-size: 360px 292px;
-    background-position: 120px 50px; }
+    background-image: url(../images/icon-uptime.svg); }
+    @media screen and (min-width: 1024px) {
+      .presentation-view .icon-uptime {
+        background-size: 180px 146px;
+        background-position: 60px 25px; } }
+    @media screen and (min-width: 1280px) {
+      .presentation-view .icon-uptime {
+        background-size: 256px 207px;
+        background-position: 85px 36px; } }
+    @media screen and (min-width: 1920px) {
+      .presentation-view .icon-uptime {
+        background-size: 360px 292px;
+        background-position: 120px 50px; } }
   .presentation-view .icon-users {
-    background-image: url(../images/icon-users.svg);
-    background-size: 304px 286px;
-    background-position: 145px 30px; }
+    background-image: url(../images/icon-users.svg); }
+    @media screen and (min-width: 1024px) {
+      .presentation-view .icon-users {
+        background-size: 152px 143px;
+        background-position: 73px 15px; } }
+    @media screen and (min-width: 1280px) {
+      .presentation-view .icon-users {
+        background-size: 216px 203px;
+        background-position: 103px 21px; } }
+    @media screen and (min-width: 1920px) {
+      .presentation-view .icon-users {
+        background-size: 304px 286px;
+        background-position: 145px 30px; } }
