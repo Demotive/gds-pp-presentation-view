@@ -10383,6 +10383,8 @@ var presentationView = {
 
     this.setWidth();
 
+    window.scrollTo(0,0);
+
     this.sliderTimer = window.setInterval(presentationView.slide, 5000);
 
     $(window).on('resize', function (e) {

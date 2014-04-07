@@ -19,12 +19,15 @@ $screen-1024: "screen and (min-width: 1024px) and (orientation: landscape)";
 $unit-width-1024: 1024px;
 $lh-gutter-1024: round($unit-width-1024 * $scale);
 
-$screen-768: "screen and (min-width: 768px) and (orientation: landscape)";
+$screen-768: "screen and (min-width: 768px)";
 $unit-width-768: 768px;
 $lh-gutter-768: round($unit-width-768 * $scale);
 
 $portrait: "(orientation: portrait)";
 $landscape: "(orientation: landscape)";
+
+// essentially when a mobile viewport is just too bloody small
+$height-threshold: "screen and (max-height: 250px)";
 
 
 html {
@@ -157,13 +160,6 @@ html {
     width: 100%;
     margin-left: 0;
 
-/*
-    -webkit-transform: translate3d(0,-50%,0);
-    -moz-transform: translate3d(0,-50%,0);
-    -o-transform: translate3d(0,-50%,0);
-    transform: translate3d(0,-50%,0);
-*/
-
     @media #{$portrait} {
       -webkit-transform: translate3d(0,-70%,0);
       -moz-transform: translate3d(0,-70%,0);
@@ -200,6 +196,9 @@ html {
     margin: 0;
 
     padding-top: 14em;
+    @media #{$height-threshold} {
+      padding-top: 0;
+    }
 
     @media #{$screen-768} {
       padding-top: 0;
@@ -298,6 +297,10 @@ html {
     background-repeat: no-repeat;
     background-position: center top;
     background-size: auto 100px;
+
+    @media #{$height-threshold} {
+      background: none !important;
+    }
   }
 
   .icon-completion {
