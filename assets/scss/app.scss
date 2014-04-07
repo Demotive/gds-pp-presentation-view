@@ -4,29 +4,74 @@
 @import '../govuk_frontend_toolkit/stylesheets/_typography';
 
 // vars
-$unit-width-1080p: 1920px;
-$lh-gutter-1080p: 590px;
+
+$scale: 0.30729166666667;
+
+$screen-1920: "screen and (min-width: 1920px) and (orientation: landscape)";
+$unit-width-1920: 1920px;
+$lh-gutter-1920: round($unit-width-1920 * $scale);
+
+$screen-1280: "screen and (min-width: 1280px) and (orientation: landscape)";
+$unit-width-1280: 1280px;
+$lh-gutter-1280: round($unit-width-1280 * $scale);
+
+$screen-1024: "screen and (min-width: 1024px) and (orientation: landscape)";
+$unit-width-1024: 1024px;
+$lh-gutter-1024: round($unit-width-1024 * $scale);
+
+$screen-768: "screen and (min-width: 768px) and (orientation: landscape)";
+$unit-width-768: 768px;
+$lh-gutter-768: round($unit-width-768 * $scale);
+
+$unit-width-mobile: 100%;
+
+$portrait: "(orientation: portrait)";
+$landscape: "(orientation: landscape)";
+
+
+html {
+  height: 100%;
+}
 
 // let's namespace
 .presentation-view {
 
   // hide body overflow
-
-  overflow: hidden;
+  &.js-enabled {
+    overflow: hidden;
+  }
 
   // General
 
+  position: relative;
+  height: 100%;
   margin: 0;
   padding: 0;
 
   font-family: $NTA-Light;
+  font-size: 81%;
   font-weight: 700;
-  font-size: 36px;
-  line-height: (40 / 36);
+  line-height: 1.11111111111111;
   text-transform: none;
   color: $white;
+  text-align: left;
 
   background-color: $govuk-blue;
+
+  @media #{$portrait} {
+    font-size: 62.5%;
+    text-align: center;
+  }
+
+  @media #{$screen-1024} {
+    font-size: 114%;
+  }
+  @media #{$screen-1280} {
+    font-size: 160%;
+  }
+  @media #{$screen-1920} {
+    font-size: 225%;
+  }
 
   a {
     color: $white;
@@ -45,19 +90,37 @@ $lh-gutter-1080p: 590px;
 
   .container {
     display: block; // opera
+    height: 100%;
   }
 
   // ---------------------------------------------------------------------------
 
   // constant header area
   .unit-header {
-    padding: 64px 0 120px 0;
-    margin-left: $lh-gutter-1080p;
+
+    @media #{$portrait} {
+      margin-top: 2em;
+    }
+    @media #{$landscape} {
+      position: absolute;
+      top: 5.925925925926%;
+      left: $lh-gutter-768;
+    }
+
+    @media #{$screen-1024} {
+      left: $lh-gutter-1024;
+    }
+    @media #{$screen-1280} {
+      left: $lh-gutter-1280;
+    }
+    @media #{$screen-1920} {
+      left: $lh-gutter-1920;
+    }
   }
 
   .unit-header--heading {
     margin: 0;
-    font-size: 60px;
+    font-size: 1.66666666666667em;
   }
 
   // ---------------------------------------------------------------------------
@@ -65,8 +128,27 @@ $lh-gutter-1080p: 590px;
   // constant footer area
 
   .performance-strap {
-    margin-top: 155px;
-    margin-left: $lh-gutter-1080p;
+    position: absolute;
+    bottom: 4.62962962963%;
+
+    @media #{$portrait} {
+      left: 0;
+      right: 0;
+    }
+    @media #{$landscape} {
+      margin: 0;
+      left: $lh-gutter-768;
+    }
+
+    @media #{$screen-1024} {
+      left: $lh-gutter-1024;
+    }
+    @media #{$screen-1280} {
+      left: $lh-gutter-1280;
+    }
+    @media #{$screen-1920} {
+      left: $lh-gutter-1920;
+    }
   }
 
   // ---------------------------------------------------------------------------
@@ -74,14 +156,17 @@ $lh-gutter-1080p: 590px;
   // slide container
 
   #units {
-    width: $unit-width-1080p;
 
+    position: relative;
+    top: 50%;
+
+    width: 100%;
     margin-left: 0;
 
-    -webkit-transform: translate3d(0,0,0);
-    -moz-transform: translate3d(0,0,0);
-    -o-transform: translate3d(0,0,0);
-    transform: translate3d(0,0,0);
+    -webkit-transform: translate3d(0,-50%,0);
+    -moz-transform: translate3d(0,-50%,0);
+    -o-transform: translate3d(0,-50%,0);
+    transform: translate3d(0,-50%,0);
 
     transition: margin-left 1s ease-in-out;
   }
@@ -97,23 +182,43 @@ $lh-gutter-1080p: 590px;
     vertical-align: top;
     margin: 0;
 
-    min-width: $unit-width-1080p;
-    padding-left: $lh-gutter-1080p;
+    // @media #{$screen-1024} {
+    @media #{$landscape} {
+      min-width: $unit-width-768;
+      padding-left: $lh-gutter-768;
+    }
+
+    @media #{$screen-1024} {
+      min-width: $unit-width-1024;
+      padding-left: $lh-gutter-1024;
+    }
+    @media #{$screen-1280} {
+      min-width: $unit-width-1280;
+      padding-left: $lh-gutter-1280;
+    }
+    @media #{$screen-1920} {
+      min-width: $unit-width-1920;
+      padding-left: $lh-gutter-1920;
+    }
   }
 
-    .unit-data--focal {
-      font-size: 400px;
-      line-height: 1;
-      letter-spacing: -0.025em;
-    }
+  .unit-data--focal {
+    font-size: 11.11111111111111em;
+    line-height: 1;
+    letter-spacing: -0.025em;
+  }
 
-    .unit-data--caption {
-      font-size: 100px;
-    }
+  .unit-data--caption {
+    font-size: 2.77777777777778em;
+  }
 
-    .unit-data--focal + .unit-data--caption {
-      margin-top: -40px;
-    }
+  .unit-data--focal + .unit-data--caption {
+    margin-top: -0.75em;
+  }
+
+  .unit-data--caption:first-child {
+    margin-top: 0.5em;
+  }
 
   // ---------------------------------------------------------------------------
 
@@ -121,10 +226,14 @@ $lh-gutter-1080p: 590px;
 
   .flag {
     position: relative;
-    left: -30px;
     display: inline-block;
-    padding: 0 30px;
+    padding: 0 0.21em;
     background-color: transparent;
+
+    @media #{$landscape} {
+      //left: -30px;
+      left: -0.21em;
+    }
   }
 
   // tinted increase levels
@@ -161,51 +270,198 @@ $lh-gutter-1080p: 590px;
 
   [class*='icon-'] {
     background-repeat: no-repeat;
+    @media #{$portrait} {
+      background-image: none !important;
+    }
   }
   .icon-completion {
     background-image: url(../images/icon-completion.svg);
-    background-size: 194px 410px;
-    background-position: 211px 0;
+
+    // @media #{$screen-768} {
+    @media #{$landscape} {
+      background-size: round(194px * 0.36) round(410px * 0.36);
+      background-position: round(211px * 0.36) 0;
+    }
+    @media #{$screen-1024} {
+      background-size: round(194px * 0.5) round(410px * 0.5);
+      background-position: round(211px * 0.5) 0;
+    }
+    @media #{$screen-1280} {
+      background-size: round(194px * 0.71) round(410px * 0.71);
+      background-position: round(211px * 0.71) 0;
+    }
+    @media #{$screen-1920} {
+      background-size: 194px 410px;
+      background-position: 211px 0;
+    }
   }
   .icon-loadtime {
     background-image: url(../images/icon-loadtime.svg);
-    background-size: 290px 330px;
-    background-position: 155px 0;
+
+    // @media #{$screen-768} {
+    @media #{$landscape} {
+      background-size: round(290px * 0.36) round(330px * 0.36);
+      background-position: round(155px * 0.36) 0;
+    }
+    @media #{$screen-1024} {
+      background-size: round(290px * 0.5) round(330px * 0.5);
+      background-position: round(155px * 0.5) 0;
+    }
+    @media #{$screen-1280} {
+      background-size: round(290px * 0.71) round(330px * 0.71);
+      background-position: round(155px * 0.71) 0;
+    }
+    @media #{$screen-1920} {
+      background-size: 290px 330px;
+      background-position: 155px 0;
+    }
   }
   .icon-renewals {
     background-image: url(../images/icon-renewals.svg);
-    background-size: 315px 316px;
-    background-position: 139px 15px;
+
+    // @media #{$screen-768} {
+    @media #{$landscape} {
+      background-size: round(315px * 0.36) round(316px * 0.36);
+      background-position: round(139px * 0.36) round(15px * 0.36);
+    }
+    @media #{$screen-1024} {
+      background-size: round(315px * 0.5) round(316px * 0.5);
+      background-position: round(139px * 0.5) round(15px * 0.5);
+    }
+    @media #{$screen-1280} {
+      background-size: round(315px * 0.71) round(316px * 0.71);
+      background-position: round(139px * 0.71) round(15px * 0.71);
+    }
+    @media #{$screen-1920} {
+      background-size: 315px 316px;
+      background-position: 139px 15px;
+    }
   }
   .icon-satisfaction {
     background-image: url(../images/icon-satisfaction.svg);
-    background-size: 421px 200px;
-    background-position: 87px 70px;
+
+    // @media #{$screen-768} {
+    @media #{$landscape} {
+      background-size: round(421px * 0.36) round(200px * 0.36);
+      background-position: round(87px * 0.36) round(70px * 0.36);
+    }
+    @media #{$screen-1024} {
+      background-size: round(421px * 0.5) round(200px * 0.5);
+      background-position: round(87px * 0.5) round(70px * 0.5);
+    }
+    @media #{$screen-1280} {
+      background-size: round(421px * 0.71) round(200px * 0.71);
+      background-position: round(87px * 0.71) round(70px * 0.71);
+    }
+    @media #{$screen-1920} {
+      background-size: 421px 200px;
+      background-position: 87px 70px;
+    }
   }
   .icon-service {
     background-image: url(../images/icon-service.svg);
-    background-size: 255px 245px;
-    background-position: 172px 160px;
+
+    // @media #{$screen-768} {
+    @media #{$landscape} {
+      background-size: round(255px * 0.36) round(285px * 0.36);
+      background-position: round(172px * 0.36) round(160px * 0.36);
+    }
+    @media #{$screen-1024} {
+      background-size: round(255px * 0.5) round(285px * 0.5);
+      background-position: round(172px * 0.5) round(160px * 0.5);
+    }
+    @media #{$screen-1280} {
+      background-size: round(255px * 0.71) round(285px * 0.71);
+      background-position: round(172px * 0.71) round(160px * 0.71);
+    }
+    @media #{$screen-1920} {
+      background-size: 255px 285px;
+      background-position: 172px 160px;
+    }
   }
   .icon-touch-horizontal {
     background-image: url(../images/icon-touch-horizontal.svg);
-    background-size: 330px 280px;
-    background-position: 128px 70px;
+
+    // @media #{$screen-768} {
+    @media #{$landscape} {
+      background-size: round(330px * 0.36) round(280px * 0.36);
+      background-position: round(128px * 0.36) round(70px * 0.36);
+    }
+    @media #{$screen-1024} {
+      background-size: round(330px * 0.5) round(280px * 0.5);
+      background-position: round(128px * 0.5) round(70px * 0.5);
+    }
+    @media #{$screen-1280} {
+      background-size: round(330px * 0.71) round(280px * 0.71);
+      background-position: round(128px * 0.71) round(70px * 0.71);
+    }
+    @media #{$screen-1920} {
+      background-size: 330px 280px;
+      background-position: 128px 70px;
+    }
   }
   .icon-touch-vertical {
     background-image: url(../images/icon-touch-vertical.svg);
-    background-size: 255px 416px;
-    background-position: 180px 0;
+
+    // @media #{$screen-768} {
+    @media #{$landscape} {
+      background-size: round(255px * 0.36) round(416px * 0.36);
+      background-position: round(180px * 0.36) 0;
+    }
+    @media #{$screen-1024} {
+      background-size: round(255px * 0.5) round(416px * 0.5);
+      background-position: round(180px * 0.5) 0;
+    }
+    @media #{$screen-1280} {
+      background-size: round(255px * 0.71) round(416px * 0.71);
+      background-position: round(180px * 0.71) 0;
+    }
+    @media #{$screen-1920} {
+      background-size: 255px 416px;
+      background-position: 180px 0;
+    }
   }
   .icon-uptime {
     background-image: url(../images/icon-uptime.svg);
-    background-size: 360px 292px;
-    background-position: 120px 50px;
+
+    // @media #{$screen-768} {
+    @media #{$landscape} {
+      background-size: round(360px * 0.36) round(292px * 0.36);
+      background-position: round(120px * 0.36) round(50px * 0.36);
+    }
+    @media #{$screen-1024} {
+      background-size: round(360px * 0.5) round(292px * 0.5);
+      background-position: round(120px * 0.5) round(50px * 0.5);
+    }
+    @media #{$screen-1280} {
+      background-size: round(360px * 0.71) round(292px * 0.71);
+      background-position: round(120px * 0.71) round(50px * 0.71);
+    }
+    @media #{$screen-1920} {
+      background-size: 360px 292px;
+      background-position: 120px 50px;
+    }
   }
   .icon-users {
     background-image: url(../images/icon-users.svg);
-    background-size: 304px 286px;
-    background-position: 145px 30px;
+
+    // @media #{$screen-768} {
+    @media #{$landscape} {
+      background-size: round(304px * 0.36) round(286px * 0.36);
+      background-position: round(145px * 0.36) round(30px * 0.36);
+    }
+    @media #{$screen-1024} {
+      background-size: round(304px * 0.5) round(286px * 0.5);
+      background-position: round(145px * 0.5) round(30px * 0.5);
+    }
+    @media #{$screen-1280} {
+      background-size: round(304px * 0.71) round(286px * 0.71);
+      background-position: round(145px * 0.71) round(30px * 0.71);
+    }
+    @media #{$screen-1920} {
+      background-size: 304px 286px;
+      background-position: 145px 30px;
+    }
   }
 
 }

@@ -1,30 +1,73 @@
-var getUnitWidth = function($mainEl) {
-  return $mainEl.width();
-};
+/*!
+ An experiment in getting accurate visible viewport dimensions across devices
+ (c) 2012 Scott Jehl.
+ MIT/GPLv2 Licence
+*/
 
-var getUnitPosition = function($mainEl) {
-  return parseInt($mainEl.css('margin-left'));
-};
+function viewportSize(){
+	var test = document.createElement( "div" );
 
-var slide = function() {
-  if (currentUnit === totalUnits) {
-    currentUnit = 0;
+	test.style.cssText = "position: fixed;top: 0;left: 0;bottom: 0;right: 0;";
+	document.documentElement.insertBefore( test, document.documentElement.firstChild );
+
+	var dims = { width: test.offsetWidth, height: test.offsetHeight };
+	document.documentElement.removeChild( test );
+
+	return dims;
+}
+
+
+// Notes:
+// relies on position:fixed support, but it should work in browsers that partially support position: fixed like iOS4 and such...
+
+//sample usage: var viewportwidth = viewportSize().width;
+
+var presentationView = {
+
+  containerEl: {},
+  unitEls: {},
+
+  totalUnits: 0,
+  viewportWidth: 0,
+  currentUnit: 1,
+
+  init: function() {
+
+    this.containerEl = $('#units');
+
+    this.unitEls = this.containerEl.find('.unit-data');
+    this.totalUnits = this.unitEls.length;
+
+    this.setWidth();
+
+    this.sliderTimer = window.setInterval(presentationView.slide, 5000);
+
+    $(window).on('resize', function (e) {
+      presentationView.setWidth();
+    });
+
+  },
+
+  setWidth: function() {
+    presentationView.viewportWidth = viewportSize().width;
+    presentationView.unitEls.each(function() {
+      $(this).css('min-width', presentationView.viewportWidth + 'px');
+    });
+  },
+
+  slide: function() {
+    if (presentationView.currentUnit === presentationView.totalUnits) {
+      presentationView.currentUnit = 0;
+    }
+    var pos = parseInt(presentationView.containerEl.css('margin-left'));
+    presentationView.containerEl.css({
+      'margin-left' : '-' + (presentationView.viewportWidth * presentationView.currentUnit) + 'px'
+    });
+    presentationView.currentUnit++;
   }
-  $mainEl.css({
-    'margin-left' : (unitPosition - (unitWidth * currentUnit)) + 'px'
-  });
-  currentUnit++;
+
 };
 
 $(function() {
-
-  $mainEl = $('#units');
-  totalUnits = $mainEl.find('.unit-data').length;
-  currentUnit = 0;
-
-  unitWidth = getUnitWidth($mainEl);
-  unitPosition = getUnitPosition($mainEl);
-
-  var sliderTimer = window.setInterval(slide, 5000);
-
+  presentationView.init();
 });
